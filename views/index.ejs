@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShortURL | <%= title %></title>
+  </head>
+  <body>
+    <h1>ShortURL Page</h1>
+    <div>
+      <form action="/" , method="POST">
+        <label for="fullurl">full url:</label>
+        <input type="text" id="fullurl" name="fullurl" required />
+        <button>submit</button>
+      </form>
+    </div>
+    <div>
+      <h2>urls</h2>
+      <% if (shorturl.length) {%> <% shorturl.forEach(url=>{ %>
+
+      <h3 class="title"><%=url.fullurl%></h3>
+      <a href="/<%= url._id%>"> <p class="snippet"><%=url.shorturl%></p> </a>
+      <% }) %> <% } else {%>
+      <p>There are no url to display</p>
+      <% }%>
+    </div>
+  </body>
+</html>
