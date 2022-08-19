@@ -6,5 +6,5 @@ const {
   shorturl_get,
 } = require('../controllers/shorturl-controller')
 router.get('/', get_index).post('/', shorturl_post)
-router.get('/:id', shorturl_get)
+router.get('/url/:id', shorturl_get)
 module.exports = router

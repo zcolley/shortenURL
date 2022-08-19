@@ -5,24 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ShortURL | <%= title %></title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1>ShortURL Page</h1>
-    <div>
-      <form action="/" , method="POST">
-        <label for="fullurl">full url:</label>
-        <input type="text" id="fullurl" name="fullurl" required />
-        <button>submit</button>
-      </form>
-    </div>
-    <div>
-      <h2>urls</h2>
-      <% if (shorturl.length) {%> <% shorturl.forEach(url=>{ %>
+  <body
+    class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 capitalize"
+  >
+    <div class="flex flex-col h-screen justify-center items-center">
+      <h1 class="text-yellow-200 my-5">ShortURL Page</h1>
+      <div class="my-5">
+        <form action="/" , method="POST">
+          <label for="fullurl">full url:</label>
+          <input
+            class="bg-inherit border-solid border-2 border-pink-400"
+            type="text"
+            id="fullurl"
+            name="fullurl"
+            required
+          />
+          <button
+            class="border-solid border-2 rounded-full border-orange-300 p-1"
+          >
+            submit
+          </button>
+        </form>
+      </div>
 
-      <h3 class="title"><%=url.fullurl%></h3>
-      <a href="/<%= url._id%>"> <p class="snippet"><%=url.shorturl%></p> </a>
-      <% }) %> <% } else {%>
-      <p>There are no url to display</p>
+      <% if (shorturl.length) {%> <% shorturl.forEach(url=>{ %>
+      <div class="my-5 text-amber-400">
+        <h2>urls</h2>
+        <h3 class="title"><%=url.fullurl%></h3>
+        <a href="/url/<%= url._id%>">
+          <p class="snippet"><%=url.shorturl%></p>
+        </a>
+        <% }) %> <% } else {%>
+        <p>There are no url to display</p>
+      </div>
       <% }%>
     </div>
   </body>

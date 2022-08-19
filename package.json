@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "node server.js"
+  },
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.1",
@@ -11,6 +14,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
-    "postcss": "^8.4.16"
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
   }
 }
